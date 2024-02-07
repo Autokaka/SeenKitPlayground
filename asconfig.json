@@ -1,0 +1,17 @@
+{
+  "targets": {
+    "demo": {
+      "outFile": "build/demo.wasm",
+      "textFile": "build/demo.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 2,
+      "converge": false,
+      "noAssert": false,
+      "noExportMemory": true
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}
