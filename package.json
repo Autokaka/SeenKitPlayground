@@ -1,22 +1,15 @@
 {
+  "type": "module",
   "name": "playground",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "demo": "asc assembly/index.ts --target demo"
+    "bundle": "cd build && zip demo.seen main.wasm && cd ..",
+    "install": "mv build/demo.seen /Users/luao/Documents/CXX/SeenKit/example/res",
+    "compile": "asc assembly/main.ts --target main --use abort= --use trace= --use seed=",
+    "main": "npm run compile && npm run bundle && npm run install",
+    "dump": "wasm-objdump -j Import -x build/main.wasm"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "assemblyscript": "^0.27.24"
-  },
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./build/release.js",
-      "types": "./build/release.d.ts"
-    }
+    "assemblyscript": "latest"
   }
 }
