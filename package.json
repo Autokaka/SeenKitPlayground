@@ -3,13 +3,13 @@
   "name": "playground",
   "version": "1.0.0",
   "scripts": {
-    "bundle": "cd build && zip demo.seen main.wasm && cd ..",
-    "install": "mv build/demo.seen /Users/luao/Documents/CXX/SeenKit/example/res",
-    "compile": "asc assembly/main.ts --target main --use abort= --use trace= --use seed=",
-    "main": "npm run compile && npm run bundle && npm run install",
-    "dump": "wasm-objdump -j Import -x build/main.wasm"
+    "bundle": "cd dist && zip demo.seen *.lua && cd ..",
+    "install": "mv dist/demo.seen /Users/luao/Documents/CXX/SeenKit/example/res",
+    "dist": "rm -rf dist && tstl",
+    "main": "npm run dist && npm run bundle && npm run install"
   },
   "devDependencies": {
-    "assemblyscript": "latest"
+    "typescript": "^5.3.3",
+    "typescript-to-lua": "^1.24.1"
   }
 }
