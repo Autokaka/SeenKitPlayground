@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "bundle": "cd dist && zip demo.seen *.lua && cd ..",
-    "install": "mv dist/demo.seen /Users/luao/Documents/CXX/SeenKit/example/res",
+    "install-demo": "cp dist/demo.seen /Users/luao/Documents/CXX/SeenKit/example/res",
     "dist": "rm -rf dist && tstl",
-    "main": "npm run dist && npm run bundle && npm run install"
+    "main": "npm run dist && npm run bundle && npm run install-demo"
   },
   "devDependencies": {
     "typescript": "^5.3.3",

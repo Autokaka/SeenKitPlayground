@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
-  assemblyscript:
-    specifier: latest
-    version: 0.27.24
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -19,20 +16,6 @@ packages:
 
   /@typescript-to-lua/language-extensions@1.19.0:
     resolution: {integrity: sha512-Os5wOKwviTD4LeqI29N0btYOjokSJ97iCf45EOjIABlb5IwNQy7AE/AqZJobRw3ywHH8+KzJUMkEirWPzh2tUA==}
-    dev: true
-
-  /assemblyscript@0.27.24:
-    resolution: {integrity: sha512-TWQVwAqBJ3akkeDhUnknQbQietiEKSw5kAIiGTqoJFGiHTDeB9LdMDhZLnashxrJuG4jR/p57DhzN8biyC1/gg==}
-    engines: {node: '>=16', npm: '>=7'}
-    hasBin: true
-    dependencies:
-      binaryen: 116.0.0-nightly.20240114
-      long: 5.2.3
-    dev: true
-
-  /binaryen@116.0.0-nightly.20240114:
-    resolution: {integrity: sha512-0GZrojJnuhoe+hiwji7QFaL3tBlJoA+KFUN7ouYSDGZLSo9CKM8swQX8n/UcbR0d1VuZKU+nhogNzv423JEu5A==}
-    hasBin: true
     dev: true
 
   /enhanced-resolve@5.15.0:
@@ -62,10 +45,6 @@ packages:
     resolution: {integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==}
     dependencies:
       hasown: 2.0.1
-    dev: true
-
-  /long@5.2.3:
-    resolution: {integrity: sha512-lcHwpNoggQTObv5apGNCTdJrO69eHOZMi4BNC+rTLER8iHAqGrUVeLh/irVIM7zTw2bOXA8T6uNPeujwOLg/2Q==}
     dev: true
 
   /path-parse@1.0.7:
