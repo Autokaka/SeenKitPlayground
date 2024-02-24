@@ -9,7 +9,7 @@ declare class Seen {
 
   log(...args: unknown[]): void;
   readonly version: string;
-  readonly gpu: Seen.GPU | undefined;
+  get gpu(): Seen.GPU | undefined;
 }
 
 declare const seen: Seen;
