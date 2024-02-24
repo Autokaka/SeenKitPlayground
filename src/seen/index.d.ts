@@ -4,10 +4,12 @@
 /// <reference types="./gpu" />
 /// <reference types="./gpu_adapter" />
 
-declare class seen {
+declare class Seen {
   private constructor();
 
-  static log(this: void, ...args: unknown[]): void;
-  static readonly version: string;
-  static readonly gpu: seen.GPU | undefined;
+  log(...args: unknown[]): void;
+  readonly version: string;
+  readonly gpu: Seen.GPU | undefined;
 }
+
+declare const seen: Seen;

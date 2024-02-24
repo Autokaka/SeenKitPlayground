@@ -16,11 +16,11 @@ function main(this: unknown) {
     seen.log("typeof seen.gpu:", typeof seen.gpu);
     // seen.log("seen.gpu.prototype:", seen.gpu ? Reflect.getPrototypeOf(seen.gpu) : undefined);
     seen.log("seen.gpu.constructor:", seen.gpu?.constructor);
-    seen.log("seen.GPU:", seen.GPU);
-    seen.log("typeof seen.GPU:", typeof seen.GPU);
-    seen.log("seen.GPU.prototype:", seen.GPU.prototype);
-    seen.log("seen.GPU.constructor:", seen.GPU.constructor);
-    seen.log("seen.gpu instanceof seen.GPU:", seen.gpu instanceof seen.GPU);
+    seen.log("Seen.GPU:", Seen.GPU);
+    seen.log("typeof Seen.GPU:", typeof Seen.GPU);
+    seen.log("Seen.GPU.prototype:", Seen.GPU.prototype);
+    seen.log("Seen.GPU.constructor:", Seen.GPU.constructor);
+    seen.log("seen.gpu instanceof Seen.GPU:", seen.gpu instanceof Seen.GPU);
 
     if (!seen.gpu) {
       return;
@@ -29,7 +29,7 @@ function main(this: unknown) {
     seen.gpu.requestAdapter((adapter) => {
       seen.log("seen.gpu.requestAdapter:", adapter);
     });
-    seen.log("seen.gpu.preferredDrawableFormat:", seen.gpu?.preferredDrawableFormat);
+    // seen.log("seen.gpu.preferredDrawableFormat:", seen.gpu?.preferredDrawableFormat);
   } catch (error) {
     seen.log(`Error:`, error);
   }

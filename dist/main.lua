@@ -2657,46 +2657,43 @@ local __TS__InstanceOf = ____lualib.__TS__InstanceOf
 function main(self)
     do
         local function ____catch(____error)
-            seen.log("Error:", ____error)
+            seen:log("Error:", ____error)
         end
         local ____try, ____hasReturned, ____returnValue = pcall(function()
             local function test(self)
             end
-            seen.log("seen.version:", seen.version)
-            seen.log("test:", test)
-            seen.log("this:", self)
-            seen.log("undefined:", nil)
-            seen.log("null:", nil)
-            seen.log("0:", 0)
-            seen.log("true:", true)
-            seen.log("seen.gpu:", seen.gpu)
-            seen.log(
+            seen:log("seen.version:", seen.version)
+            seen:log("test:", test)
+            seen:log("this:", self)
+            seen:log("undefined:", nil)
+            seen:log("null:", nil)
+            seen:log("0:", 0)
+            seen:log("true:", true)
+            seen:log("seen.gpu:", seen.gpu)
+            seen:log(
                 "typeof seen.gpu:",
                 __TS__TypeOf(seen.gpu)
             )
             local ____seen_log_2 = seen.log
             local ____opt_0 = seen.gpu
-            ____seen_log_2("seen.gpu.constructor:", ____opt_0 and ____opt_0.constructor)
-            seen.log("seen.GPU:", seen.GPU)
-            seen.log(
-                "typeof seen.GPU:",
-                __TS__TypeOf(seen.GPU)
+            ____seen_log_2(seen, "seen.gpu.constructor:", ____opt_0 and ____opt_0.constructor)
+            seen:log("Seen.GPU:", Seen.GPU)
+            seen:log(
+                "typeof Seen.GPU:",
+                __TS__TypeOf(Seen.GPU)
             )
-            seen.log("seen.GPU.prototype:", seen.GPU.prototype)
-            seen.log("seen.GPU.constructor:", seen.GPU.constructor)
-            seen.log(
-                "seen.gpu instanceof seen.GPU:",
-                __TS__InstanceOf(seen.gpu, seen.GPU)
+            seen:log("Seen.GPU.prototype:", Seen.GPU.prototype)
+            seen:log("Seen.GPU.constructor:", Seen.GPU.constructor)
+            seen:log(
+                "seen.gpu instanceof Seen.GPU:",
+                __TS__InstanceOf(seen.gpu, Seen.GPU)
             )
             if not seen.gpu then
                 return true
             end
             seen.gpu:requestAdapter(function(adapter)
-                seen.log("seen.gpu.requestAdapter:", adapter)
+                seen:log("seen.gpu.requestAdapter:", adapter)
             end)
-            local ____seen_log_5 = seen.log
-            local ____opt_3 = seen.gpu
-            ____seen_log_5("seen.gpu.preferredDrawableFormat:", ____opt_3 and ____opt_3.preferredDrawableFormat)
         end)
         if not ____try then
             ____hasReturned, ____returnValue = ____catch(____hasReturned)
