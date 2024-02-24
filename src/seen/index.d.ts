@@ -8,13 +8,19 @@
 declare class Seen {
   private constructor();
 
-  onRunningStateChanged?: (isRunning: boolean) => void;
-  onDrawableChanged?: (isAvailable: boolean) => void;
-  onDrawableMetricsChanged?: (metrics: Seen.DrawableMetrics) => void;
+  onRunningStateChanged?: Seen.RunningStateChangedCallback;
+  onDrawableChanged?: Seen.DrawableChangedCallback;
+  onDrawableMetricsChanged?: Seen.DrawableMetricsChangedCallback;
 
   log(...args: unknown[]): void;
   readonly version: string;
   readonly gpu: Seen.GPU | undefined;
+}
+
+declare namespace Seen {
+  type RunningStateChangedCallback = (isRunning: boolean) => void;
+  type DrawableChangedCallback = (isAvailable: boolean) => void;
+  type DrawableMetricsChangedCallback = (metrics: Seen.DrawableMetrics) => void;
 }
 
 declare const seen: Seen;
