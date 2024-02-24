@@ -3,13 +3,18 @@
 /// <reference types="./gpu_texture_format" />
 /// <reference types="./gpu" />
 /// <reference types="./gpu_adapter" />
+/// <reference types="./drawable_metrics" />
 
 declare class Seen {
   private constructor();
 
+  onRunningStateChanged?: (isRunning: boolean) => void;
+  onDrawableChanged?: (isAvailable: boolean) => void;
+  onDrawableMetricsChanged?: (metrics: Seen.DrawableMetrics) => void;
+
   log(...args: unknown[]): void;
   readonly version: string;
-  get gpu(): Seen.GPU | undefined;
+  readonly gpu: Seen.GPU | undefined;
 }
 
 declare const seen: Seen;
