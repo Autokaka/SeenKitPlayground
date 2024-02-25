@@ -1,7 +1,9 @@
 // Created by Autokaka (qq1909698494@gmail.com) on 2024/02/23.
 
+/// <reference types="./object" />
+
 declare namespace Seen {
-  class GPU {
+  class GPU extends Object<"kGPU"> {
     private constructor();
 
     requestAdapter(options: GPU.RequestAdapterOptions, callback: GPU.RequestAdapterCallback): void;

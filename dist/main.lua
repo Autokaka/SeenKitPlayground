@@ -2662,6 +2662,7 @@ function main(self)
         local ____try, ____hasReturned, ____returnValue = pcall(function()
             local function test(self)
             end
+            seen:log("seen.className:", seen.className)
             seen:log("seen.version:", seen.version)
             seen:log("test:", test)
             seen:log("this:", self)
@@ -2670,13 +2671,16 @@ function main(self)
             seen:log("0:", 0)
             seen:log("true:", true)
             seen:log("seen.gpu:", seen.gpu)
+            local ____seen_log_2 = seen.log
+            local ____opt_0 = seen.gpu
+            ____seen_log_2(seen, "seen.gpu?.className:", ____opt_0 and ____opt_0.className)
             seen:log(
                 "typeof seen.gpu:",
                 __TS__TypeOf(seen.gpu)
             )
-            local ____seen_log_2 = seen.log
-            local ____opt_0 = seen.gpu
-            ____seen_log_2(seen, "seen.gpu.constructor:", ____opt_0 and ____opt_0.constructor)
+            local ____seen_log_5 = seen.log
+            local ____opt_3 = seen.gpu
+            ____seen_log_5(seen, "seen.gpu?.constructor:", ____opt_3 and ____opt_3.constructor)
             seen:log("Seen.GPU:", Seen.GPU)
             seen:log(
                 "typeof Seen.GPU:",
@@ -2692,7 +2696,33 @@ function main(self)
                 return true
             end
             seen.gpu:requestAdapter(function(adapter)
-                seen:log("seen.gpu.requestAdapter:", adapter)
+                seen:log("adapter?.className:", adapter and adapter.className)
+                seen:log("adapter:", adapter)
+            end)
+            seen:log("seen.isRunning", seen.isRunning)
+            seen:log("seen.isDrawableAvailable:", seen.isDrawableAvailable)
+            seen:log("seen.drawableMetrics:", seen.drawableMetrics)
+            seen:log("seen.onRunningStateChanged", seen.onRunningStateChanged)
+            seen:log("seen.onDrawableChanged", seen.onDrawableChanged)
+            seen:log("seen.onDrawableMetricsChanged", seen.onDrawableMetricsChanged)
+            seen.onRunningStateChanged = function(isRunning)
+                seen:log(("seen.onRunningStateChanged(isRunning=" .. tostring(isRunning)) .. ")")
+            end
+            seen.onDrawableChanged = function(isAvailable)
+                seen:log(("seen.onDrawableChanged(isAvailable=" .. tostring(isAvailable)) .. ")")
+            end
+            seen.onDrawableMetricsChanged = function(metrics)
+                seen:log(("seen.onDrawableMetricsChanged(metrics=" .. tostring(metrics)) .. ")")
+            end
+            seen:log("seen.onRunningStateChanged", seen.onRunningStateChanged)
+            seen:log("seen.onDrawableChanged", seen.onDrawableChanged)
+            seen:log("seen.onDrawableMetricsChanged", seen.onDrawableMetricsChanged)
+            local framePacer = seen:createFramePacer()
+            seen:log("framePacer:", framePacer)
+            seen:log("framePacer.className:", framePacer.className)
+            seen:log("framePacer.requestAnimationFrame:", framePacer.requestAnimationFrame)
+            framePacer:requestAnimationFrame(function(prefFrameMillis, currentFrameDueMillis)
+                seen:log(((("framePacer.requestAnimationFrame(prefFrameMillis=" .. tostring(prefFrameMillis)) .. ", currentFrameDueMillis=") .. tostring(currentFrameDueMillis)) .. ")")
             end)
         end)
         if not ____try then
